@@ -37,7 +37,7 @@ def get_average_exchange_rate():
 
 
     start_date = three_days_ago.strftime('%Y%m%d')
-    end_date = today.strftime('%Y%m%d')
+    end_date = (today - timedelta(days=1)).strftime('%Y%m%d')
 
     url_usd = (f'https://bank.gov.ua/NBU_Exchange/exchange_site?start={start_date}'
                f'&end={end_date}&valcode=usd&sort=exchangedate&order=desc&json')
